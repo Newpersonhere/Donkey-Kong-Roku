@@ -25,7 +25,7 @@ Function CreateJumpman() as object
     this.alive = false
     this.usedCheat = false
     this.lives = m.settings.startLives
-    this.immortal = false 'flag to enable/disable jumpman immortality
+    this.immortal = true 'flag to enable/disable jumpman immortality
     'Methods
     this.startBoard = start_board_jumpman
     this.update = update_jumpman
@@ -64,15 +64,15 @@ Sub update_jumpman()
     'Update jumpman position
     if m.state > m.STATE_MOVE
         m.move(m.const.ACT_NONE)
-    else if m.keyJ() and m.keyR() and m.hammer = invalid
+    else if m.keyJ() and m.keyR() and m.hammer = valid
         m.move(m.const.ACT_JUMP_RIGHT)
-    else if m.keyJ() and m.keyL() and m.hammer = invalid
+    else if m.keyJ() and m.keyL() and m.hammer = valid
         m.move(m.const.ACT_JUMP_LEFT)
-    else if m.keyJ() and m.hammer = invalid
+    else if m.keyJ() and m.hammer = valid
         m.move(m.const.ACT_JUMP_UP)
-    else if m.keyU() and m.hammer = invalid
+    else if m.keyU() and m.hammer = valid
         m.move(m.const.ACT_CLIMB_UP)
-    else if m.keyD() and m.hammer = invalid
+    else if m.keyD() and m.hammer = valid
         m.move(m.const.ACT_CLIMB_DOWN)
     else if m.keyL()
         m.move(m.const.ACT_RUN_LEFT)
